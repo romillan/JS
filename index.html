@@ -1,12 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
-<y>
-    <h1>Holaaaaaa</h1>
-    <script src="./main.js"></script>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item mx-2"> 
+            </li>
+            <li class="nav-item mx-2">
+            <a class="nav-link" href="#">CORTAPELOS</a>
+            </li>
+            <li class="nav-item mx-2">
+            <a class="nav-link" href="#">PATILLERAS</a>
+            </li>
+            <li class="nav-item mx-2">
+            <a class="nav-link" href="#">OTROS ACCESORIOS</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <h1>Carrito de Compras</h1>
+
+    <div class="producto">
+        <h3>Patillera</h3>
+        <p>KEMEII - $50</p>
+        <button class="agregar" data-nombre="KEMEII" data-precio="50">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Patillera</h3>
+        <p>CRONIER - $40</p>
+        <button class="agregar" data-nombre="CRONIER" data-precio="40">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Patillera</h3>
+        <p>SAMSUNG - $30</p>
+        <button class="agregar" data-nombre="SAMSUNG" data-precio="30">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Cortapelo</h3>
+        <p>HTC - $60</p>
+        <button class="agregar" data-nombre="HTC" data-precio="60">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Cortapelo</h3>
+        <p>GAMA - $45</p>
+        <button class="agregar" data-nombre="GAMA" data-precio="45">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Cortapelo</h3>
+        <p>WAHL - $55</p>
+        <button class="agregar" data-nombre="WAHL" data-precio="55">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Rasuradora</h3>
+        <p>KEMEII - $70</p>
+        <button class="agregar" data-nombre="KEMEII" data-precio="70">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Rasuradora</h3>
+        <p>PHILIPS - $65</p>
+        <button class="agregar" data-nombre="PHILIPS" data-precio="65">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>Rasuradora</h3>
+        <p>VGR - $80</p>
+        <button class="agregar" data-nombre="VGR" data-precio="80">Agregar al Carrito</button>
+    </div>
+
+    <div id="carrito">
+        <h2>Carrito</h2>
+        <ul id="productos-carrito">
+        </ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="reiniciar-carrito">Reiniciar Carrito</button>
+    </div>
+
+<div class="container my-5">
+
+    <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+    
+        <section class="">
+        <form action="">
+            <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+            <p class="pt-2">
+                <strong>Dejanos tu email para recibir noticias</strong>
+            </p>
+            </div>  
+
+            <div class="col-md-5 col-12">
+                <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example2" class="form-control" />
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-outline-light mb-4">
+                ENVIAR
+                </button>
+            </div>
+            </div>
+        
+        </form>
+        </section>
+    </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Siguenos en instagram
+        <a class="text-white" href="#">@Emeinsumos</a>
+        </div>
+    </footer>
+    
+    </div>
+    </div>
+
+
+    <script src="main.js"></script>
 </body>
 </html>
