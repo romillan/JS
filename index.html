@@ -1,135 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Simulador de Compras</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
+    <nav class="navbar navbar-dark">
+        <div class="container" style="background-color: rgb(0, 0, 0);;">
+            <a class="navbar-brand logo" href="#">
+                <img src="./img/logi insumos.png" alt="Logo" />
+            </a>
             <ul class="navbar-nav d-flex flex-row">
-            <li class="nav-item mx-2"> 
-            </li>
-            <li class="nav-item mx-2">
-            <a class="nav-link" href="#">CORTAPELOS</a>
-            </li>
-            <li class="nav-item mx-2">
-            <a class="nav-link" href="#">PATILLERAS</a>
-            </li>
-            <li class="nav-item mx-2">
-            <a class="nav-link" href="#">OTROS ACCESORIOS</a>
-            </li>
+                <li class="nav-item mx-2"></li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">CORTAPELOS</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">PATILLERAS</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">RASURADORAS</a>
+                </li>
             </ul>
         </div>
     </nav>
-    </header>
-    <h1>Carrito de Compras</h1>
-
-    <div class="producto">
-        <h3>Patillera</h3>
-        <p>KEMEII - $50</p>
-        <button class="agregar" data-nombre="KEMEII" data-precio="50">Agregar al Carrito</button>
+    <div>
+        <img class="logo1" src="./img/logi insumos.png" alt="logo1"></a>
     </div>
 
-    <div class="producto">
-        <h3>Patillera</h3>
-        <p>CRONIER - $40</p>
-        <button class="agregar" data-nombre="CRONIER" data-precio="40">Agregar al Carrito</button>
+    <h2>Eme Insumos y Eme Barberia, barbería nacida en Montevideo (Uruguay), situada en la Avenida 18 de julio.
+
+        Fue creada en agosto del 2023 por un Pablo junto a Rodrigo. El estilo clásico de inspiración retro e influencia británica junto a la profesionalidad, por encima de cualquier otra cosa, de sus empleados, te harán entregarte sin remedio a la experiencia de ser asesorado y cuidado. Bajo el concepto contemporáneo de barberia, el equipo de Eme Insumos y Eme Barberia, ejerce de referente no sólo aportándote una imagen cuidada como asesores sino como oyentes de tus confidencias y cómplices de tu propia vida.
+        
+        Su premisa es la de transmitir a sus clientes la pasión que sienten por su trabajo. Perpetuar la historia de las barberias en cada corte y la esencia del cuidado al cliente que siempre ha caracterizado al barbero.
+        
+        Movidos por las sonrisas de sus clientes al salir de Eme Insumos y Eme Barberia, este intrépido y joven equipo de barberoa no deja de reinventarse y crecer.
+        
+        Anímate a probar esta experiencia: trato exquisito, profesionalidad, buen gusto y productos de primera calidad. ¡Te aseguramos que no te dejará impasible!</h2>
+    
+    <div class="rectangulo"></div>
+    
+    <div class="container my-5">
+
+        <!-- grilla para cortapelos -->
+        <h1>CORTAPELOS</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="producto">
+                <img class="cortapelo" src="./img/cortapelo1987.jpg" alt="cortapelo1"></a>
+                <p>KEMEI 1987 - $3200</p>
+                <button class="agregar" data-nombre="CORTAPELO KEMEI 1987" data-precio="3200">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img class="cortapelo" src="./img/cortapelokm3705.jpg" alt="cortapelo2"></a>
+                <p>KEMEI 3705 - $3400</p>
+                <button class="agregar" data-nombre="CORTAPELO KEMEI 3705" data-precio="3400">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img class="cortapelo" src="./img/CORTAPELOKM1926.jpg" alt="cortapelo3"></a>
+                <p>KEMEI 1926 - $2900</p>
+                <button class="agregar" data-nombre="CORTAPELO KEMEI 1926" data-precio="2900">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- grilla  patilleras -->
+        <h1>PATILLERAS</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="producto">
+                <img class="cortapelo" src="./img/patillerakm1949.jpg" alt="patillera1"></a>
+                <p>KEMEI 1949 - $2500</p>
+                <button class="agregar" data-nombre="PATILLERA KEMEI 1949" data-precio="2500">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img class="cortapelo" src="./img/patillerakm700h.jpg" alt="patillera2"></a>
+                <p>KEMEI 700H - $2100</p>
+                <button class="agregar" data-nombre="PATILLERA KEMEI 700H" data-precio="2100">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img class="cortapelo" src="./img/Patillerakm1931.jpg" alt="patillera3"></a>
+                <p>KEMEI 1931 - $1900</p>
+                <button class="agregar" data-nombre="PATILLERA KEMEI 1931" data-precio="1900">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- grilla para rasuradoras -->
+        <h1>RASURADORAS</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="producto">
+                <img class="cortapelo" src="./img/rasuradorakmtx1.jpg" alt="RASURADORAS"></a>
+                <p>KEMEI TX1 - $3200</p>
+                <button class="agregar" data-nombre="RASURADORA KEMEI TX1" data-precio="3200">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img class="cortapelo" src="./img/rasuradorakmtx7.jpg" alt="patillera2"></a>
+                <p>KEMEI TX7 - $2500</p>
+                <button class="agregar" data-nombre="RASURADORA KEMEI TX7" data-precio="2500">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img class="cortapelo" src="./img/rauradoraNG987.jpg" alt="patillera2"></a>
+                <p>KEMEI NG987 - $2100</p>
+                <button class="agregar" data-nombre="RASURADORA KEMEI NG987" data-precio="2100">Agregar al Carrito</button>
+            </div>
+        </div>
     </div>
 
-    <div class="producto">
-        <h3>Patillera</h3>
-        <p>SAMSUNG - $30</p>
-        <button class="agregar" data-nombre="SAMSUNG" data-precio="30">Agregar al Carrito</button>
-    </div>
-
-    <div class="producto">
-        <h3>Cortapelo</h3>
-        <p>HTC - $60</p>
-        <button class="agregar" data-nombre="HTC" data-precio="60">Agregar al Carrito</button>
-    </div>
-
-    <div class="producto">
-        <h3>Cortapelo</h3>
-        <p>GAMA - $45</p>
-        <button class="agregar" data-nombre="GAMA" data-precio="45">Agregar al Carrito</button>
-    </div>
-
-    <div class="producto">
-        <h3>Cortapelo</h3>
-        <p>WAHL - $55</p>
-        <button class="agregar" data-nombre="WAHL" data-precio="55">Agregar al Carrito</button>
-    </div>
-
-    <div class="producto">
-        <h3>Rasuradora</h3>
-        <p>KEMEII - $70</p>
-        <button class="agregar" data-nombre="KEMEII" data-precio="70">Agregar al Carrito</button>
-    </div>
-
-    <div class="producto">
-        <h3>Rasuradora</h3>
-        <p>PHILIPS - $65</p>
-        <button class="agregar" data-nombre="PHILIPS" data-precio="65">Agregar al Carrito</button>
-    </div>
-
-    <div class="producto">
-        <h3>Rasuradora</h3>
-        <p>VGR - $80</p>
-        <button class="agregar" data-nombre="VGR" data-precio="80">Agregar al Carrito</button>
-    </div>
-
-    <div id="carrito">
-        <h2>Carrito</h2>
-        <ul id="productos-carrito">
-        </ul>
+    <div id="carrito" class="container my-5">
+        <h3>Carrito</h3>
+        <ul id="productos-carrito"></ul>
         <p>Total: $<span id="total-carrito">0</span></p>
         <button id="reiniciar-carrito">Reiniciar Carrito</button>
     </div>
 
-<div class="container my-5">
-
     <footer class="bg-dark text-center text-white">
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-    
-        <section class="">
-        <form action="">
-            <div class="row d-flex justify-content-center">
-            <!--Grid column-->
-            <div class="col-auto">
-            <p class="pt-2">
-                <strong>Dejanos tu email para recibir noticias</strong>
-            </p>
-            </div>  
-
-            <div class="col-md-5 col-12">
-                <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control" />
-                </div>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-outline-light mb-4">
-                ENVIAR
-                </button>
-            </div>
-            </div>
-        
-        </form>
-        </section>
-    </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        Siguenos en instagram
-        <a class="text-white" href="#">@Emeinsumos</a>
+        <div class="text-center p-3" style="background-color: rgb(0, 0, 0);;">
+            Siguenos en instagram
+            <a class="text-white" href="#">@Emeinsumos</a>
         </div>
     </footer>
-    
-    </div>
-    </div>
 
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
 </body>
 </html>

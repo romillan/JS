@@ -1,0 +1,92 @@
+[
+    {
+        "id": "cortapelo1",
+        "titulo": "Cortapelo Kemei 1987",
+        "imagen": "./img/cortapelo1987.jpg",
+        "categoria": {
+            "nombre": "Cortapelos",
+            "id": "cortapelos"
+        },
+        "precio": 3200
+    },
+    {
+        "id": "cortapelo2",
+        "titulo": "Cortapelo Kemei 3705",
+        "imagen": "./img/cortapelokm3705.jpg",
+        "categoria": {
+            "nombre": "Cortapelos",
+            "id": "cortapelos"
+        },
+        "precio": 3400
+    },
+    {
+        "id": "cortapelo3",
+        "titulo": "Cortapelo Kemei 1926",
+        "imagen": "./img/CORTAPELOKM1926.jpg",
+        "categoria": {
+            "nombre": "Cortapelos",
+            "id": "cortapelos"
+        },
+        "precio": 2900
+    },
+    {
+        "id": "patillera1",
+        "titulo": "Patillera Kemei 1949",
+        "imagen": "./img/patillerakm1949.jpg",
+        "categoria": {
+            "nombre": "Patilleras",
+            "id": "patilleras"
+        },
+        "precio": 2500
+    },
+    {
+        "id": "patillera2",
+        "titulo": "Patillera Kemei 700H",
+        "imagen": "./img/patillerakm700h.jpg",
+        "categoria": {
+            "nombre": "Patilleras",
+            "id": "patilleras"
+        },
+        "precio": 2100
+    },
+    {
+        "id": "patillera3",
+        "titulo": "Patillera Kemei 1931",
+        "imagen": "./img/Patillerakm1931.jpg",
+        "categoria": {
+            "nombre": "patilleras",
+            "id": "patilleras"
+        },
+        "precio": 1900
+    },
+    {
+        "id": "rasuradora1",
+        "titulo": "Rasuradora Kemei TX1",
+        "imagen": "./img/rasuradorakmtx1.jpg",
+        "categoria": {
+            "nombre": "Rasuradoras",
+            "id": "rasuradoras"
+        },
+        "precio": 3200
+    },
+    {
+        "id": "rasuradora-02",
+        "titulo": "Rasuradora Kemei TX7",
+        "imagen": "./img/rasuradorakmtx7.jpg",
+        "categoria": {
+            "nombre": "Rasuradoras",
+            "id": "rasuradoras"
+        },
+        "precio": 2500
+    },
+    {
+        "id": "rasuradora-03",
+        "titulo": "Rasuradora Kemei NG987",
+        "imagen": "./img/rauradoraNG987.jpg",
+        "categoria": {
+            "nombre": "Rasuradoras",
+            "id": "rasuradoras"
+        },
+        "precio": 2100
+    }
+]

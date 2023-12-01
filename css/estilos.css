@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+.navbar-brand{
+    max-width: 100px;
+}
+
+.navbar-brand img {
+    height: 80px; 
+}
+
+.logo1{
+    width: 250px;
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 50px;
+}
+
+.rectangulo {
+    width: 600px;
+    height: 5px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.cortapelo {
+    width: 300px;
+    border: 1px solid #ff0000;
+    margin-bottom: 40px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+h2{
+    text-align: center;
+    padding: 100px;
+    text-size-adjust: 58px;
+    font-size: 18px;
+}
+
+.producto {
+    padding: 10px;
+    text-align: center;
+    text-overflow: 2px;
+}
+
+
+.agregar {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: 1px solid  #ff0000;
+    cursor: pointer;
+}
+
+.quitar {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: 1px solid  #ff0000;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#reiniciar-carrito{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: 1px solid  #ff0000;
+    cursor: pointer;
+}
+
+#carrito {
+    border: 3px solid  #ff0000;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#productos-carrito {
+    list-style-type: none;
+    padding: 0;
+}
+
+#productos-carrito li {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    color: white; /* Esto ajustará el color del texto para que sea legible en el fondo oscuro */
+}
+
+
+footer {
+    margin-top: 50px;
+}
+
+.footer p {
+    margin: 0;
+}
