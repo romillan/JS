@@ -47,11 +47,28 @@ h2{
     font-size: 18px;
 }
 
-.producto {
-    padding: 10px;
+#contenedor-productos {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Distribuir los elementos horizontalmente */
+  }
+
+  #productos-carrito img {
+    max-width: 200px; /* Tamaño máximo de la imagen dentro del carrito */
+    margin-right: 10px; /* Agrega un margen derecho para separar la imagen del texto */
+  }
+
+  .producto {
     text-align: center;
-    text-overflow: 2px;
-}
+    margin-bottom: 20px; /* Agrega margen inferior para separar los productos */
+  }
+
+.producto img {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 25px;
+  }
 
 
 .agregar {
@@ -96,7 +113,7 @@ h2{
 
 body {
     background-color: rgb(10, 10, 10);
-    color: white; /* Esto ajustará el color del texto para que sea legible en el fondo oscuro */
+    color: white; 
 }
 
 

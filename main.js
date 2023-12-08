@@ -2,20 +2,21 @@
 let carritoActual = obtenerCarritoDelLocalStorage();
 let totalCarrito = 0;
 
-// eventos para el boton de agregar productos
+// eventos para el botón de agregar productos
 document.querySelectorAll(".agregar").forEach(button => {
     button.addEventListener("click", () => {
-        const nombre = button.getAttribute("data-nombre");
+        const titulo = button.getAttribute("data-titulo");
         const precio = parseFloat(button.getAttribute("data-precio"));
-        agregarAlCarrito(nombre, precio);
+        const imagen = button.getAttribute("data-imagen");
+        agregarAlCarrito(titulo, precio, imagen);
     });
 });
 
 // reiniciar el carrito
 document.getElementById("reiniciar-carrito").addEventListener("click", reiniciarCarrito);
 
-// funcion agregar productos al carrito
-function agregarAlCarrito(nombre, precio) {
+// función agregar productos al carrito
+function agregarAlCarrito(titulo, precio, imagen) {
     Toastify({
         text: "Producto agregado al carrito",
         duration: 3000,
@@ -26,20 +27,24 @@ function agregarAlCarrito(nombre, precio) {
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-        background: "linear-gradient(to right, #000000, #ff0000)",
+            background: "linear-gradient(to right, #000000, #ff0000)",
         },
-        onClick: function(){} // Callback after click
-        }).showToast();
+        onClick: function () { } // Callback after click
+    }).showToast();
     const carrito = document.getElementById("productos-carrito");
     const productoElement = document.createElement("li");
-    productoElement.textContent = `${nombre} - $${precio}`;
+    productoElement.innerHTML = `
+        <img src="${imagen}" alt="${titulo}" />
+        ${titulo} - $${precio}
+    `;
+    
 
     // agregar o eliminar productos
     const eliminarBoton = document.createElement("button");
     eliminarBoton.textContent = "Quitar";
     eliminarBoton.className = "quitar";
     eliminarBoton.addEventListener("click", () => {
-        quitarDelCarrito(nombre, precio);
+        quitarDelCarrito(titulo, precio);
         Toastify({
             text: "Producto eliminado del carrito",
             duration: 3000,
@@ -50,49 +55,75 @@ function agregarAlCarrito(nombre, precio) {
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
-            background: "linear-gradient(to right, #000000, #ff0000)",
+                background: "linear-gradient(to right, #000000, #ff0000)",
             },
-            onClick: function(){} // Callback after click
+            onClick: function () { } // Callback after click
         }).showToast();
     });
     productoElement.appendChild(eliminarBoton);
 
     carrito.appendChild(productoElement);
 
-    // actualizar el total
+    // actualizar el total cuando se agrega un producto
     totalCarrito += precio;
     actualizarTotal();
 
+    // actualizar el carritoActual y guardar en el Local Storage
+    carritoActual.push({ titulo, precio, imagen });
+    actualizarCarritoEnLocalStorage();
 
-    // guardar productos en el local storage
-    guardarCarritoEnLocalStorage();
 }
 
-
-// función,archivo JSON
 function cargarProductosDesdeJSON() {
-    fetch('./js/productos.json')
+    fetch('./json/productos.json')
         .then(response => response.json())
         .then(data => {
-            console.log('Productos cargados desde el archivo JSON:', data);
+            agregarProductosAlContenedor(data);
         })
         .catch(error => console.error('Error al cargar productos desde el archivo JSON:', error));
 }
 
+function agregarProductosAlContenedor(productos) {
+    const contenedorProductos = document.getElementById("contenedor-productos");
 
-//  función para cargar productos desde el archivo JSON
+    productos.forEach(producto => {
+        const productoElement = document.createElement("div");
+        productoElement.className = "producto";
+        productoElement.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.titulo}" />
+            <h3>${producto.titulo}</h3>
+            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <button class="agregar" data-titulo="${producto.titulo}" data-precio="${producto.precio}" data-imagen="${producto.imagen}">Agregar al Carrito</button>
+        `;
+
+        contenedorProductos.appendChild(productoElement);
+
+        // evento click al botón para agregar al carrito
+        const botonAgregar = productoElement.querySelector(".agregar");
+        botonAgregar.addEventListener("click", () => {
+            const titulo = botonAgregar.getAttribute("data-titulo");
+            const precio = parseFloat(botonAgregar.getAttribute("data-precio"));
+            const imagen = botonAgregar.getAttribute("data-imagen");
+            agregarAlCarrito(titulo, precio, imagen);
+        });
+    });
+}
+
+// función para cargar productos desde el JSON
 cargarProductosDesdeJSON();
 
-// funcion eliminar un producto del carrito
-function quitarDelCarrito(nombre, precio) {
+// función eliminar un producto del carrito
+function quitarDelCarrito(titulo, precio) {
     const carrito = document.getElementById("productos-carrito");
     const productos = carrito.getElementsByTagName("li");
 
     for (let i = 0; i < productos.length; i++) {
         const producto = productos[i];
         const texto = producto.textContent;
-        if (texto.includes(nombre)) {
+        if (texto.includes(titulo)) {
+            // Remueve solo el producto específico
             carrito.removeChild(producto);
+            break; // Sal del bucle después de encontrar y eliminar el producto
         }
     }
 
@@ -103,44 +134,50 @@ function quitarDelCarrito(nombre, precio) {
     // actualizar el carrito en el almacenamiento local
     actualizarCarritoEnLocalStorage();
 }
-
-// funcion para actualizar el total en la interfaz
+// función para actualizar el total en la interfaz
 function actualizarTotal() {
     const totalCarritoElement = document.getElementById("total-carrito");
     totalCarritoElement.textContent = totalCarrito.toFixed(2);
 }
 
-// funcion para guardar el carrito en el local storage
-function guardarCarritoEnLocalStorage() {
-    const carritoActual = obtenerCarritoDelLocalStorage();
-    carritoActual.push({ nombre, precio });
+
+// función para guardar o actualizar el carrito en el local storage
+function actualizarCarritoEnLocalStorage() {
     localStorage.setItem("carrito", JSON.stringify(carritoActual));
 }
 
-// funcion para actualizar el carrito en el local storage
-function actualizarCarritoEnLocalStorage() {
-    const carritoActual = obtenerCarritoDelLocalStorage();
-    const productoIndex = carritoActual.findIndex(item => item.nombre === nombre);
-    if (productoIndex !== -1) {
-        carritoActual.splice(productoIndex, 1);
-        localStorage.setItem("carrito", JSON.stringify(carritoActual));
-    }
-}
-
-// funcion para obtener el carrito desde el local storage
+// función para obtener el carrito desde el local storage
 function obtenerCarritoDelLocalStorage() {
-    const carrito = localStorage.getItem("carrito");
-    return carrito ? JSON.parse(carrito) : [];
+    return JSON.parse(localStorage.getItem("carrito")) || [];
 }
 
-// funcion para cargar el carrito desde el local storage al cargar la página
-document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
+window.addEventListener('beforeunload', () => {
+    actualizarCarritoEnLocalStorage();
+});
 
 
-// funcion para reiniciar el carrito
+document.addEventListener('DOMContentLoaded', () => {
+    carritoActual = obtenerCarritoDelLocalStorage();
+
+    // limpiar completamente el carrito en la interfaz antes de recargar
+    const carrito = document.getElementById("productos-carrito");
+    carrito.innerHTML = "";
+
+    // recargar el carrito en la interfaz
+    carritoActual.forEach(producto => {
+        agregarAlCarrito(producto.titulo, producto.precio, producto.imagen);
+    });
+
+    // actualizar el total
+    actualizarTotal();
+});
+
+
+// función para reiniciar el carrito
 function reiniciarCarrito() {
     Swal.fire("Carrito vaciado!");
-    // Reiniciar las variables globales
+    
+    // reiniciar las variables globales
     carritoActual = [];
     totalCarrito = 0;
 
@@ -153,5 +190,7 @@ function reiniciarCarrito() {
 
     // vaciar el almacenamiento local (localStorage)
     localStorage.removeItem("carrito");
-}
 
+    // actualizar el carrito en el Local Storage después de reiniciar
+    actualizarCarritoEnLocalStorage();
+}
